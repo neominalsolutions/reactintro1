@@ -28,7 +28,7 @@ export default class ClassComponentSample extends Component<
 		// 1. tetikleme
 		console.log('Component ilk doma giridiğinde tetiklenen method');
 		// API'dan veri çekme işlemine yer veririz.
-		this.setState({ counter: 1 });
+		this.setState({ counter: 1 }); // eğer burada setState yaparsa componentDidUpdate tetikler.
 	}
 
 	componentDidUpdate(
