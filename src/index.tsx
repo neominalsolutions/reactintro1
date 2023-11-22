@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UsersParentSample from './components/Users/UsersParentSample';
 
 // const a:number = 5;
 
@@ -12,8 +13,10 @@ const root = ReactDOM.createRoot(
 root.render(
 	// <React.StrictMode>
 	<>
-		<App />
 		{/* <App /> */}
+		<div style={{ padding: 10, color: 'CaptionText' }}>
+			<UsersParentSample />
+		</div>
 	</>
 
 	// </React.StrictMode>
