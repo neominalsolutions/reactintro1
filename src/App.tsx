@@ -1,35 +1,29 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ClassComponentSample from './components/ClassComponentSample';
 
 function App() {
-  // variables
-	const name = 'Ali';
-	// const name2 = `${name}`;
+	// function componentlerde state durumlarını kontrol etmek Hook yapıları kullanırız
+	// useState Hook ile state değişikliğini yapıyoruz.
+	const [visible, setVisible] = useState<boolean>(false);
+	// visible getter, setVisible setter
+	const toggle = () => {
+		setVisible(!visible);
+	};
 
-  // functions
-
-  // render
+	// render methoduna denk gelir.
 	return (
 		<>
 			<div className="App">
-				{name}
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-						Edit <code>src/App.tsx</code> and save to reload.
-					</p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-				</header>
+				{visible && (
+					<ClassComponentSample
+						title="React Class"
+						body="React Class Component Sample"
+					/>
+				)}
+				<button onClick={toggle}>Toggle Visible</button>
 			</div>
-			<div>Deneme1</div>
 		</>
 	);
 }
